@@ -3,16 +3,16 @@ SET search_path TO week2, public;
 
 -- Insert sample customers
 INSERT INTO customers (email, full_name) VALUES 
-('alice@example.com', 'Alice Johnson'),
-('bob@example.com', 'Bob Smith'),
-('carol@example.com', 'Carol Williams');
+('ravi@email.com', 'Ravi kumar'),
+('arun@email.com', 'Arun vijay'),
+('vani@email.com', 'Vani priya');
 
 -- Insert addresses
 INSERT INTO addresses (customer_id, line1, city, state, postal_code, is_default) VALUES 
-(1, '123 Main St', 'Portland', 'OR', '97201', true),
-(1, '456 Oak Ave', 'Portland', 'OR', '97202', false),
-(2, '789 Pine Rd', 'Seattle', 'WA', '98101', true),
-(3, '321 Elm St', 'Austin', 'TX', '73301', true);
+(1, 'ABC St', 'Tirupati', 'AP', '12345', true),
+(1, 'DEF St', 'Tirupati', 'AP', '23456', false),
+(2, '123 St', 'Vijayawada', 'AP', '54321', true),
+(3, 'XYZ St', 'Vizag', 'AP', '65432', true);
 
 -- Insert categories
 INSERT INTO categories (name, description) VALUES 
@@ -23,11 +23,11 @@ INSERT INTO categories (name, description) VALUES
 
 -- Insert products
 INSERT INTO products (sku, name, price, description) VALUES 
-('LAPTOP001', 'Gaming Laptop', 1299.99, 'High-performance gaming laptop'),
-('MOUSE001', 'Wireless Mouse', 29.99, 'Ergonomic wireless mouse'),
-('BOOK001', 'SQL Fundamentals', 39.95, 'Comprehensive SQL guide'),
-('SHIRT001', 'Cotton T-Shirt', 19.99, '100% cotton t-shirt'),
-('PLANT001', 'Peace Lily', 24.99, 'Low-maintenance houseplant');
+('LAPTOP001', 'Gaming Laptop', 60000.99, 'High-performance gaming laptop'),
+('MOUSE001', 'Wireless Mouse', 500.99, 'Ergonomic wireless mouse'),
+('BOOK001', 'SQL Fundamentals', 300, 'Comprehensive SQL guide'),
+('SHIRT001', 'Cotton T-Shirt', 400, '100% cotton t-shirt'),
+('PLANT001', 'Peace Lily', 150, 'Low-maintenance houseplant');
 
 -- Insert product-category relationships (M:N)
 INSERT INTO product_categories (product_id, category_id) VALUES 
@@ -52,8 +52,8 @@ INSERT INTO orders (customer_id, status, shipping_address_id) VALUES
 
 -- Insert order items
 INSERT INTO order_items (order_id, product_id, quantity, unit_price) VALUES 
-(1, 1, 1, 1299.99),
-(1, 2, 2, 29.99),
-(2, 3, 1, 39.95),
-(2, 4, 3, 19.99),
-(3, 5, 2, 24.99);
+(1, 1, 1, 60000.99),
+(1, 2, 2, 500.99),
+(2, 3, 1, 300),
+(2, 4, 3, 400),
+(3, 5, 2, 150);
