@@ -20,7 +20,7 @@ CREATE TABLE addresses (
   city TEXT NOT NULL,
   state TEXT,
   postal_code TEXT,
-  country TEXT NOT NULL DEFAULT 'USA',
+  country TEXT NOT NULL DEFAULT 'INDIA',
   is_default BOOLEAN NOT NULL DEFAULT false
 );
 
@@ -71,4 +71,5 @@ CREATE TABLE order_items (
   quantity INTEGER NOT NULL CHECK (quantity > 0),
   unit_price NUMERIC(12,2) NOT NULL CHECK (unit_price >= 0),
   PRIMARY KEY (order_id, product_id)
+
 );
