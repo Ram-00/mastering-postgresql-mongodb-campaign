@@ -4,13 +4,13 @@ SET search_path TO week2, public;
 -- 1. Find customer by email
 SELECT customer_id, full_name, email, created_at
 FROM customers 
-WHERE email = 'alice@example.com';
+WHERE email = 'ravi@email.com';
 
 -- 2. List all addresses for a customer
 SELECT a.line1, a.line2, a.city, a.state, a.postal_code, a.is_default
 FROM addresses a
 JOIN customers c ON c.customer_id = a.customer_id
-WHERE c.email = 'alice@example.com';
+WHERE c.email = 'ravi@email.com';
 
 -- 3. Products in Electronics category
 SELECT p.sku, p.name, p.price
@@ -40,7 +40,7 @@ FROM customers c
 JOIN orders o ON o.customer_id = c.customer_id
 JOIN order_items oi ON oi.order_id = o.order_id
 JOIN products p ON p.product_id = oi.product_id
-WHERE c.email = 'alice@example.com'
+WHERE c.email = 'ravi@email.com'
 ORDER BY o.order_date DESC, p.name;
 
 -- 6. Order totals by customer
